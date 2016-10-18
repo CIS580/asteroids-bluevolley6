@@ -12,7 +12,7 @@ module.exports = exports = Asteroid;
  * Creates a new asteroid object
  * @param {Postition} position object specifying an x and y
  */
-function Asteroid(position, velocity, canvas) {
+function Asteroid(position, velocity, mass, canvas) {
   this.worldWidth = canvas.width;
   this.worldHeight = canvas.height;
   this.position = {
@@ -22,7 +22,7 @@ function Asteroid(position, velocity, canvas) {
   this.width  = position.width;
   this.height = position.height;
   this.radius = this.width/2;
-  this.mass = Math.floor(Math.random()*5) + 1;
+  this.mass = mass;
   this.velocity = {
     x: velocity.x,
     y: velocity.y

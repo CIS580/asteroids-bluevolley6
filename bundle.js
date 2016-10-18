@@ -41,6 +41,7 @@ for(i=0; i < 12; i++) {
       x:Math.floor(Math.random()*3) + 1,
       y:Math.floor(Math.random()*3) + 1
     },
+    Math.floor(Math.random()*5) + 1,
     canvas
   ));
 }
@@ -222,29 +223,26 @@ function lazerCollsion(){
           var velocity1 = {x: Math.cos(angle + Math.PI/4)*1.5, y: Math.sin(angle + Math.PI/4)*1.5};
           var velocity2 = {x: Math.cos(angle - Math.PI/4)*1.5, y: Math.sin(angle - Math.PI/4)*1.5};
 
-          var asteroid1 = new Asteroid({
+          asteroids.push(new Asteroid({
             x:asteroids[i].x,
-            y:asteroids[i].y,
+            y:asteroids[i].x,
             width: asteroids[i].width/2,
             height: asteroids[i].height/2},
             velocity1,
+            asteroids[i].mass/2,
             canvas
-          );
-          asteroid1.mass = asteroids[i].mass/2;
-          asteroids.push(asteroid1);
+          ));
 
-          var asteroid2 = new Asteroid({
+          asteroids.push(new Asteroid({
             x:asteroids[i].x,
-            y:asteroids[i].y,
+            y:asteroids[i].x,
             width: asteroids[i].width/2,
             height: asteroids[i].height/2},
             velocity2,
+            asteroids[i].mass/2,
             canvas
-          );
-          asteroid2.mass = asteroids[i].mass/2;
-          asteroids.push(asteroid2);
+          ));
         }
-        console.log(asteroids.length);
         if(asteroids.length == 1) {
           asteroids.splice(i,1);
           level++;
@@ -255,12 +253,14 @@ function lazerCollsion(){
                 x:Math.floor(Math.random()*3) + 1,
                 y:Math.floor(Math.random()*3) + 1
               },
+              Math.floor(Math.random()*5) + 1,
               canvas
             ));
           }
         } else {
           asteroids.splice(i,1);
         }
+        console.log(asteroids.length);
         score += 10;
         break;
       }
@@ -331,7 +331,7 @@ module.exports = exports = Asteroid;
  * Creates a new asteroid object
  * @param {Postition} position object specifying an x and y
  */
-function Asteroid(position, velocity, canvas) {
+function Asteroid(position, velocity, mass, canvas) {
   this.worldWidth = canvas.width;
   this.worldHeight = canvas.height;
   this.position = {
@@ -341,7 +341,7 @@ function Asteroid(position, velocity, canvas) {
   this.width  = position.width;
   this.height = position.height;
   this.radius = this.width/2;
-  this.mass = Math.floor(Math.random()*5) + 1;
+  this.mass = mass;
   this.velocity = {
     x: velocity.x,
     y: velocity.y
