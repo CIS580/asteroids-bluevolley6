@@ -217,14 +217,14 @@ function lazerCollsion(){
       if(distSquared < Math.pow(asteroids[i].radius, 2) && lazers[j].color == 'red') {
         // Laser struck asteroid
         lazers[j].color = 'black';
-        if(asteroids[i].width > 5){
+        if(asteroids[i].width > 18){
           var angle = Math.atan(asteroids[i].velocity.y/asteroids[i].velocity.x);
           var velocity1 = {x: Math.cos(angle + Math.PI/4)*1.5, y: Math.sin(angle + Math.PI/4)*1.5};
           var velocity2 = {x: Math.cos(angle - Math.PI/4)*1.5, y: Math.sin(angle - Math.PI/4)*1.5};
 
           asteroids.push(new Asteroid({
-            x:asteroids[i].x,
-            y:asteroids[i].x,
+            x:asteroids[i].position.x,
+            y:asteroids[i].position.y,
             width: asteroids[i].width/2,
             height: asteroids[i].height/2},
             velocity1,
@@ -233,8 +233,8 @@ function lazerCollsion(){
           ));
 
           asteroids.push(new Asteroid({
-            x:asteroids[i].x,
-            y:asteroids[i].x,
+            x:asteroids[i].position.x,
+            y:asteroids[i].position.y,
             width: asteroids[i].width/2,
             height: asteroids[i].height/2},
             velocity2,
