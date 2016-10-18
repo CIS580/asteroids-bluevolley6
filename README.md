@@ -4,7 +4,7 @@ created for the Fall 2016 class of CIS 580 at Kansas State University.
 
 ## Requirements
 
-You will be building a clone of Asteroids, where the purpose is to pilot a ship through an astroid field without dying.
+You will be building a clone of Asteroids, where the purpose is to pilot a ship through an asteroid field without dying.
 
 You may use the art provided, or your own.  Additionally, you do not need to make your game concern asteroids - as long as the core game mechanic is the same, feel free to explore.
 
@@ -22,7 +22,7 @@ You may use the art provided, or your own.  Additionally, you do not need to mak
 
 7. A laser will break an asteroid into two or more smaller pieces when it hits them.  These pieces have part of the original asteroid's mass, and velocities that move away from each other. If an asteroid is small enough, it is simply destroyed. (20 points).
 
-8. The player's score, level, and lives are displayed on the game screen in some fashion - either through the _drawText()_ method or via an HTML element overlayed on the game screen.  Instructions on how to play the game appear in some easily-accessible fashion, i.e. on the page, or over the game screen accessed with the _esc_ key (10 points).
+8. The player's score, level, and lives are displayed on the game screen in some fashion - either through the _drawText()_ method or via an HTML element overlaid on the game screen.  Instructions on how to play the game appear in some easily-accessible fashion, i.e. on the page, or over the game screen accessed with the _esc_ key (10 points).
 
 ### Extra Credit
 
@@ -56,10 +56,12 @@ Then run the command:
 The bundle will automatically be re-created every time you change a source file.  However, you still need to refresh your browser for the changed bundle to take effect.
 
 ## Credits
-The frog art was provided by [tgfcoder](http://opengameart.org/users/tgfcoder) of [Open Game Art](http://opengameart.org) as a public domain work.
+The asteroid art was provided by [phaelax](http://opengameart.org/users/phaelax) of [Open Game Art](http://opengameart.org) as a public domain work.
 
-Mini and Sports Car art was provided by  [bahi](http://opengameart.org/users/bahi) of [Open Game Art](http://opengameart.org) under a CC-BY license.
+explode.wav was provided by [Michel Baradari](http://opengameart.org/content/2-high-quality-explosions) of [Open Game Art](http://opengameart.org) as a public domain work.
 
-Sedan and Pickup art was provided by  [bahi](http://opengameart.org/users/bahi) of [Open Game Art](http://opengameart.org) under a CC-BY license.
+8bit_bomb_explosion.wav was provided by [Luke.RUSTLTD](http://opengameart.org/users/lukerustltd) of [Open Game Art](http://opengameart.org) as a public domain work.
+
+qubodup-crash.ogg was provided by [qubodup](http://opengameart.org/users/qubodup) of [Open Game Art](http://opengameart.org) as a public domain work.
 
 Game framework HTML5/CSS3/Javascript code was written by course instructor Nathan Bean, and released under a CC-BY license.
