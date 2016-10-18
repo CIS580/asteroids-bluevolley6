@@ -31,7 +31,7 @@ var lazers = [];
 var shooting = false;
 
 var asteroids = [];
-for(i=0; i < 12; i++) {
+for(i=0; i < 10; i++) {
   asteroids.push(new Asteroid({
     x:Math.floor(Math.random() * canvas.width),
     y:Math.floor(Math.random() * canvas.height),
@@ -245,10 +245,13 @@ function lazerCollsion(){
         if(asteroids.length == 1) {
           asteroids.splice(i,1);
           level++;
-          for(i=0; i < 12; i++) {
+          console.log('here');
+          for(i=0; i < 10; i++) {
             asteroids.push(new Asteroid({
               x:Math.floor(Math.random() * canvas.width),
-              y:Math.floor(Math.random() * canvas.height)},{
+              y:Math.floor(Math.random() * canvas.height),
+              width: 72,
+              height: 72},{
                 x:Math.floor(Math.random()*3) + 1,
                 y:Math.floor(Math.random()*3) + 1
               },
@@ -259,7 +262,6 @@ function lazerCollsion(){
         } else {
           asteroids.splice(i,1);
         }
-        console.log(asteroids.length);
         score += 10;
         break;
       }
