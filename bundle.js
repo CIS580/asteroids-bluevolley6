@@ -32,7 +32,7 @@ var lazers = [];
 var shooting = false;
 
 var asteroids = [];
-for(i=0; i < 3; i++) {
+for(i=0; i < 10; i++) {
   asteroids.push(new Asteroid({
     x:Math.floor(Math.random() * canvas.width),
     y:Math.floor(Math.random() * canvas.height),
